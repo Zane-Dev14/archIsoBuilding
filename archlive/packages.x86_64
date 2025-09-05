@@ -4,6 +4,10 @@ base-devel
 grub
 efibootmgr
 os-prober
+syslinux
+memtest86+
+memtest86+-efi
+edk2-shell
 
 # Your Custom Kernel
 linux-mits-capstone
@@ -35,6 +39,7 @@ papirus-icon-theme
 # Common Applications
 firefox
 vlc
+libreoffice-still
 gimp
 loupe
 
@@ -46,6 +51,9 @@ go
 python
 python-pip
 python-virtualenv
+docker
+timeshift
+flatpak
 
 # Jupyter & Data Science
 jupyterlab
