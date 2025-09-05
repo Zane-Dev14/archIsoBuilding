@@ -1,0 +1,71 @@
+# Base System & Bootloader
+base
+base-devel
+grub
+efibootmgr
+os-prober
+
+# Your Custom Kernel
+linux-mits-capstone
+linux-mits-capstone-headers
+
+# Networking & System Utilities
+networkmanager
+git
+htop
+fastfetch
+wget
+curl
+tmux
+zsh
+zsh-completions
+vim
+nano
+unzip
+p7zip
+
+# Desktop Environment - GNOME (Wayland)
+gdm
+gnome
+gnome-tweaks
+gnome-terminal
+gnome-shell-extensions
+papirus-icon-theme
+
+# Common Applications
+firefox
+vlc
+gimp
+loupe
+
+# Development Toolchains
+code # Visual Studio Code - OSS Version
+rust
+cargo
+go
+python
+python-pip
+python-virtualenv
+
+# Jupyter & Data Science
+jupyterlab
+python-numpy
+python-scipy
+python-matplotlib
+python-pandas
+python-scikit-learn
+
+# ML/AI Frameworks with GPU Acceleration
+python-pytorch-cuda
+python-tensorflow-cuda
+
+# NVIDIA Drivers & Tools
+nvidia-dkms
+nvidia-utils
+nvidia-settings
+opencl-nvidia
+cuda
+cudnn
+
+# Installer
+archinstall
