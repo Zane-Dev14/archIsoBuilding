@@ -1,0 +1,28 @@
+[mkarchiso] INFO: Validating options...
+[mkarchiso] INFO: Done!
+[mkarchiso] INFO: mkarchiso configuration settings
+[mkarchiso] INFO:              Architecture:   x86_64
+[mkarchiso] INFO:         Working directory:   /home/zane/Capstone/archIso/archIsoBuilding/work
+[mkarchiso] INFO:    Installation directory:   arch
+[mkarchiso] INFO:                Build date:   2025-09-06T15:40+0530
+[mkarchiso] INFO:          Output directory:   /home/zane/Capstone/archIso/archIsoBuilding/out
+[mkarchiso] INFO:        Current build mode:   iso
+[mkarchiso] INFO:               Build modes:   iso
+[mkarchiso] INFO:                   GPG key:   None
+[mkarchiso] INFO:                GPG signer:   None
+[mkarchiso] INFO: Code signing certificates:   None
+[mkarchiso] INFO:                   Profile:   /home/zane/Capstone/archIso/archIsoBuilding/archlive
+[mkarchiso] INFO: Pacman configuration file:   /home/zane/Capstone/archIso/archIsoBuilding/archlive/pacman.conf
+[mkarchiso] INFO:           Image file name:   neuronOS-2025.09.06-x86_64.iso
+[mkarchiso] INFO:          ISO volume label:   NEURON_202509
+[mkarchiso] INFO:             ISO publisher:   Eric
+[mkarchiso] INFO:           ISO application:   NeuronOS Live/Rescue DVD
+[mkarchiso] INFO:                Boot modes:   bios.syslinux.mbr bios.syslinux.eltorito uefi-ia32.systemd-boot.esp uefi-x64.systemd-boot.esp uefi-ia32.systemd-boot.eltorito uefi-x64.systemd-boot.eltorito
+[mkarchiso] INFO:             Packages File:   /home/zane/Capstone/archIso/archIsoBuilding/archlive/packages.x86_64
+[mkarchiso] INFO:                  Packages:   base base-devel grub efibootmgr os-prober syslinux memtest86+ memtest86+-efi edk2-shell archiso linux-mits-capstone linux-mits-capstone-headers networkmanager git htop fastfetch wget curl tmux zsh zsh-completions vim nano unzip p7zip gdm gnome-backgrounds gnome-calculator gnome-calendar gnome-characters gnome-clocks gnome-color-manager gnome-contacts gnome-control-center gnome-disk-utility gnome-font-viewer gnome-keyring gnome-logs gnome-maps gnome-menus gnome-session gnome-settings-daemon gnome-shell gnome-shell-extensions gnome-system-monitor gnome-text-editor gnome-tweaks gnome-user-docs gnome-user-share gnome-weather nautilus simple-scan loupe baobab evince file-roller eog seahorse sushi xdg-user-dirs-gtk xdg-desktop-portal-gnome papirus-icon-theme firefox vlc libreoffice-still gimp rust go python python-pip python-virtualenv docker timeshift flatpak jupyterlab python-numpy python-scipy python-matplotlib python-pandas python-scikit-learn python-seaborn python-sympy python-opencv python-scikit-image python-statsmodels archinstall
+[mkarchiso] INFO: Copying /etc/skel/* to user homes...
+[mkarchiso] INFO: Done!
+[mkarchiso] INFO: Running customize_airootfs.sh in '/home/zane/Capstone/archIso/archIsoBuilding/work/x86_64/airootfs' chroot...
+[mkarchiso] WARNING: customize_airootfs.sh is deprecated! Support for it will be removed in a future archiso version.
+==> WARNING: /home/zane/Capstone/archIso/archIsoBuilding/work/x86_64/airootfs is not a mountpoint. This may have undesirable side effects.
+usermod: user 'arch' does not exist
