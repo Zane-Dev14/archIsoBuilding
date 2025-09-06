@@ -7,9 +7,19 @@ tree
 archlive-> where everything happens, build dir for ISO 
 
 important files
+_____________________________________________
 1)archlive/airootfs/root/customize_airootfs.sh -> used during Arch ISO building to customize the live environment's root filesystem (airootfs), allowing you to install packages, configure settings, or add files before the ISO is built.
+
 2)archlive/packages.x86_64 -> where we add stuff to install from pacman DURING build
-3)archlive/airootfs/etc/systemd/system/post-install.service  -> the service to post install, runs only once
+
+3)archlive/airootfs/etc/systemd/system/post-install.service  -> the service to post install, runs only once(PIP PACKAGES, LIke transformers accelerate datasets safetensors sentencepiece)
+
+4)archlive/airootfs/usr/local/bin/install-ml.sh -> install script. POST install.
+
+5)archlive/profiledef.sh -> iso name, description etc
+
+_____________________________________________
+TREE
 
 ❯ tree -d -I "yay|work"
 .
