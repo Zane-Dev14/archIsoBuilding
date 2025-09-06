@@ -1,0 +1,13 @@
+[Unit]
+Description=Run Post-Install Script (one-time)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/root/post_install.sh
+ExecStartPost=/usr/bin/systemctl disable post-install.service
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

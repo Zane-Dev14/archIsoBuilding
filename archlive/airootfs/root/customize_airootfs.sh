@@ -12,11 +12,20 @@ echo "NeuronOS" > /etc/hostname
 systemctl enable NetworkManager.service
 systemctl enable gdm.service
 systemctl enable docker.service
+systemctl enable install-ml.service
 
 ## -- USER EXPERIENCE -- ##
 
 # Set Zsh as the default shell for the 'arch' live user
 usermod -s /bin/zsh arch
+
+# ensure arch user exists and is in the right groups
+usermod -aG wheel,docker arch 2>/dev/null || true
+
+# allow wheel group passwordless sudo
+echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/wheel-nopasswd
+chmod 440 /etc/sudoers.d/wheel-nopasswd
+
 
 # Create a default .zshrc for a better terminal experience
 cat <<'EOF' > /home/arch/.zshrc

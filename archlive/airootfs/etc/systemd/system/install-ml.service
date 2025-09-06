@@ -1,0 +1,12 @@
+[Unit]
+Description=Install ML/AI frameworks and NVIDIA stack
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/install-ml.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

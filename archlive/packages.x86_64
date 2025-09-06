@@ -9,7 +9,7 @@ memtest86+
 memtest86+-efi
 edk2-shell
 
-# Your Custom Kernel
+# Custom Kernel
 linux-mits-capstone
 linux-mits-capstone-headers
 
@@ -28,12 +28,43 @@ nano
 unzip
 p7zip
 
-# Desktop Environment - GNOME (Wayland)
+# Desktop Environment - GNOME
 gdm
-gnome
-gnome-tweaks
-gnome-terminal
+gnome-backgrounds
+gnome-calculator
+gnome-calendar
+gnome-characters
+gnome-clocks
+gnome-color-manager
+gnome-contacts
+gnome-control-center
+gnome-disk-utility
+gnome-font-viewer
+gnome-keyring
+gnome-logs
+gnome-maps
+gnome-menus
+gnome-session
+gnome-settings-daemon
+gnome-shell
 gnome-shell-extensions
+gnome-system-monitor
+gnome-text-editor
+gnome-tweaks
+gnome-user-docs
+gnome-user-share
+gnome-weather
+nautilus
+simple-scan
+loupe
+baobab
+evince
+file-roller
+eog
+seahorse
+sushi
+xdg-user-dirs-gtk
+xdg-desktop-portal-gnome
 papirus-icon-theme
 
 # Common Applications
@@ -41,12 +72,9 @@ firefox
 vlc
 libreoffice-still
 gimp
-loupe
 
 # Development Toolchains
-code # Visual Studio Code - OSS Version
 rust
-cargo
 go
 python
 python-pip
@@ -55,25 +83,34 @@ docker
 timeshift
 flatpak
 
-# Jupyter & Data Science
+# Jupyter & Data Science (repo-available only)
 jupyterlab
 python-numpy
 python-scipy
 python-matplotlib
 python-pandas
 python-scikit-learn
+python-seaborn
+python-sympy
+python-opencv
+python-scikit-image
+python-statsmodels
 
-# ML/AI Frameworks with GPU Acceleration
-python-pytorch-cuda
-python-tensorflow-cuda
+# ML/AI Frameworks (install later from local repo)
+# python-pytorch-cuda
+# python-tensorflow-cuda
+# onnxruntime
+# python-onnx
 
-# NVIDIA Drivers & Tools
-nvidia-dkms
-nvidia-utils
-nvidia-settings
-opencl-nvidia
-cuda
-cudnn
+# NVIDIA Drivers & Tools (install later from local repo)
+# nvidia-dkms
+# nvidia-utils
+# nvidia-settings
+# opencl-nvidia
+# cuda
+# cudnn
+# nvtop
+# nvidia-prime
 
 # Installer
 archinstall
