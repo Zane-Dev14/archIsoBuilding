@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+# Ensure /boot directory exists
+mkdir -p /boot
+
+if [ -f /lib/modules/6.16.4-2-mits-capstone-Mits-Capstone/vmlinuz ]; then
+    cp /lib/modules/6.16.4-2-mits-capstone-Mits-Capstone/vmlinuz /boot/vmlinuz-linux-mits-capstone
+    echo "[hook] Copied custom kernel to /boot/vmlinuz-linux-mits-capstone"
+else
+    echo "[hook] ERROR: Kernel vmlinuz not found under /lib/modules"
+    exit 1
+fi
