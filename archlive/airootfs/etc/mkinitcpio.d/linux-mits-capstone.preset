@@ -1,6 +1,5 @@
-# /etc/mkinitcpio.d/linux-mits-capstone.preset
 ALL_config="/etc/mkinitcpio.conf.d/archiso.conf"
-ALL_kver="linux-mits-capstone"
+ALL_kver="6.16.4-2-mits-capstone-Mits-Capstone"
 PRESETS=('default' 'fallback')
 
 default_image="/boot/initramfs-linux-mits-capstone.img"
