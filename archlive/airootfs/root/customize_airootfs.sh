@@ -1,47 +1,37 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
-# ----------------------------------------------------
-# Hostname
-# ----------------------------------------------------
+# Set hostname
 echo "NeuronOS" > /etc/hostname
 
-# ----------------------------------------------------
 # Enable services
-# ----------------------------------------------------
 systemctl enable NetworkManager.service
 systemctl enable gdm.service
 systemctl enable docker.service
 
-# ----------------------------------------------------
-# Kernel + Initramfs handling
-# ----------------------------------------------------
-KVER="6.16.4-2-mits-capstone-Mits-Capstone"
-BOOT_DIR="/boot"
+echo "[customize_airootfs] Waiting 60 seconds before squashfs..."
+sleep 60
 
-# Copy the kernel image from /lib/modules/<version> into /boot
-if [[ -f /lib/modules/$KVER/vmlinuz ]]; then
-    cp /lib/modules/$KVER/vmlinuz "$BOOT_DIR/vmlinuz-linux-mits-capstone"
-    echo "[customize_airootfs] Copied kernel -> $BOOT_DIR/vmlinuz-linux-mits-capstone"
+# Sanity check: verify kernel + initramfs + modules exist in ISO staging
+ISO_BOOT="/build/iso/boot"
+ISO_MODULES="/build/iso/lib/modules/6.16.4-2-mits-capstone-Mits-Capstone"
+
+echo "[customize_airootfs] Checking if required kernel files exist in ISO staging..."
+
+for f in \
+    "$ISO_BOOT/vmlinuz-linux-mits-capstone" \
+    "$ISO_BOOT/initramfs-linux-mits-capstone.img" \
+    "$ISO_BOOT/initramfs-linux-mits-capstone-fallback.img"
+do
+    if [ -f "$f" ]; then
+        echo "[OK] Found $f"
+    else
+        echo "[MISSING] $f"
+    fi
+done
+
+if [ -d "$ISO_MODULES" ]; then
+    echo "[OK] Found modules directory: $ISO_MODULES"
 else
-    echo "[customize_airootfs][ERROR] Kernel vmlinuz not found at /lib/modules/$KVER/"
-    exit 1
+    echo "[MISSING] Modules directory: $ISO_MODULES"
 fi
-
-# Generate initramfs (normal + fallback)
-if command -v mkinitcpio >/dev/null 2>&1; then
-    echo "[customize_airootfs] Generating initramfs images..."
-    mkinitcpio -k "$KVER" -g "$BOOT_DIR/initramfs-linux-mits-capstone.img"
-    mkinitcpio -k "$KVER" -g "$BOOT_DIR/initramfs-linux-mits-capstone-fallback.img" -S autodetect || true
-else
-    echo "[customize_airootfs][ERROR] mkinitcpio not found inside chroot!"
-    exit 1
-fi
-
-# ----------------------------------------------------
-# Optional: Backup copies to host (safety net)
-# ----------------------------------------------------
-BACKUP_DIR="/run/archiso/copy-out"
-mkdir -p "$BACKUP_DIR"
-cp "$BOOT_DIR"/vmlinuz-linux-mits-capstone "$BOOT_DIR"/initramfs-linux-mits-capstone*.img "$BACKUP_DIR"/
-echo "[customize_airootfs] Backed up kernel + initramfs to $BACKUP_DIR"
