@@ -1,3 +1,4 @@
+kernel="linux-mits-capstone"
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 iso_name="neuronOS"

@@ -4,7 +4,7 @@ set -e -u
 echo "[NeuronOS] Installing ML/AI frameworks and NVIDIA stack from local repo..."
 
 # Install everything from your local repo
-pacman -Sy --noconfirm \
+pacman -Syu --noconfirm \
   python-pytorch-cuda \
   python-tensorflow-cuda \
   onnxruntime \

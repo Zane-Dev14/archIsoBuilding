@@ -1,7 +1,8 @@
 [Unit]
 Description=Install ML/AI frameworks and NVIDIA stack
-After=network-online.target docker.service
+After=network-online.target
 Wants=network-online.target
+ConditionPathExists=!/var/lib/install-ml.done
 
 [Service]
 Type=oneshot
