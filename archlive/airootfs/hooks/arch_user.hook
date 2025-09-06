@@ -1,0 +1,21 @@
+#!/bin/bash
+# Add live user
+useradd -m -G wheel,docker -s /bin/zsh arch
+echo "arch:arch" | chpasswd
+
+# Set up .zshrc
+cat <<'EOF' > /home/arch/.zshrc
+# Basic zsh config
+alias ll='ls -l --color=auto'
+EOF
+chown arch:arch /home/arch/.zshrc
+
+# Copy fastfetch config
+mkdir -p /home/arch/.config/fastfetch
+cp /root/.config/fastfetch/config.jsonc /home/arch/.config/fastfetch/
+chown -R arch:arch /home/arch/.config
+
+# Allow passwordless sudo for wheel group
+echo "%wheel ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/wheel-nopasswd
+chmod 440 /etc/sudoers.d/wheel-nopasswd
+

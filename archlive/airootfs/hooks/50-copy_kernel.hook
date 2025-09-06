@@ -1,0 +1,3 @@
+#!/bin/bash
+# Copy custom kernel from /lib/modules/.../vmlinuz to /boot
+cp /lib/modules/6.16.4-2-mits-capstone-Mits-Capstone/vmlinuz /boot/vmlinuz-linux-mits-capstone
