@@ -1,0 +1,7 @@
+ALL_config="/etc/mkinitcpio.conf.d/archiso.conf"
+ALL_kver="/boot/vmlinuz-linux-mits-capstone"
+
+PRESETS=('archiso')
+
+archiso_image="/boot/initramfs-linux-mits-capstone.img"
+archiso_options=""

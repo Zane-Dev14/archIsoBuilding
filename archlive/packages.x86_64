@@ -1,3 +1,4 @@
+archiso
 # Custom Kernel
 linux-mits-capstone
 linux-mits-capstone-headers
@@ -12,7 +13,6 @@ syslinux
 memtest86+
 memtest86+-efi
 edk2-shell
-archiso
 
 # Networking & System Utilities
 networkmanager

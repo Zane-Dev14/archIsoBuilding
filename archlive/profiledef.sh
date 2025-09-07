@@ -2,7 +2,7 @@
 # shellcheck disable=SC2034
 
 iso_name="NeuronOS"
-iso_label="NeuronOS"
+iso_label="neuronos"
 iso_publisher="Eric "
 iso_application="MITS"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
